@@ -1,0 +1,64 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int treningDays = int.Parse(Console.ReadLine());
+        int countDancer = int.Parse(Console.ReadLine());
+
+
+        double result1 = 0;
+        double result2 = 0;
+        double result3 = 0;
+        double result4 = 0;
+
+        for (int i = 1; i <= treningDays; i++)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            if (i % 2== 0)
+            {
+                if (n % 2 == 0)
+                {
+                    result1 += countDancer * 68;
+                }
+                else
+                {
+                    result2 += countDancer * 65;
+
+                }
+            }
+            else
+            {
+                if (n % 2 == 0)
+                {
+                    result3 += countDancer * 49;
+                }
+                else
+                {
+                    result4 += countDancer * 30;
+
+                }
+            }
+
+           
+        }
+
+        double totalEnergy = 100 * countDancer * treningDays;
+
+        double restEnergy = totalEnergy - (result1 + result2 + result3 + result4);
+        double needEnergy = (restEnergy / countDancer) / treningDays;
+
+        if (needEnergy >= 50)
+        {
+            Console.WriteLine("They feel good! Energy left: {0:f2}", needEnergy);
+
+        }
+        else
+        {
+            Console.WriteLine("They are wasted! Energy left: {0:f2}", needEnergy);
+        }
+    }
+}
+
