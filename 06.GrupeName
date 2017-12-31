@@ -1,0 +1,50 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        char capitalLetter = char.Parse(Console.ReadLine());
+        char small1 = char.Parse(Console.ReadLine());
+        char small2 = char.Parse(Console.ReadLine());
+        char small3 = char.Parse(Console.ReadLine());
+        int num = int.Parse(Console.ReadLine());
+
+        int sum1 = 0;
+
+        for (char i = 'A'; i <= capitalLetter; i++)
+        {
+            for (char j = 'a'; j <= small1; j++)
+            {
+                for (char k = 'a'; k <= small2; k++)
+                {
+                    for (char m = 'a'; m <= small3; m++)
+                    {
+                        for (int n = 0; n <= num; n++)
+                        {
+                            string sum = i.ToString() + j + k + m + n;
+                            sum1++;
+
+                            
+
+                            if (i == capitalLetter && j == small1 && k == small2 && m == small3 )
+                            {
+                                if (n == num - 1)
+                                {
+                                    Console.WriteLine(sum1);
+                                    return;
+                              }                                
+                            }
+                         }
+                    }
+                }
+            }
+        }      
+
+        if (num == 0)
+        {
+            Console.WriteLine(num);
+        }        
+    }
+}
+
