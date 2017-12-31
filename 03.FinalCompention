@@ -1,0 +1,55 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        decimal dancer = decimal.Parse(Console.ReadLine());
+        decimal point = decimal.Parse(Console.ReadLine());
+        string season = Console.ReadLine().ToLower();
+        string places = Console.ReadLine().ToLower();
+
+        decimal money = 0.0m;
+
+        if (places == "bulgaria")
+        {
+            if (season == "summer")
+            {
+                 money = (dancer * point) ;
+                money = money - (money * 0.05m);
+            }
+            else if (season == "winter")
+            {
+                money = (dancer * point);
+                money =  money - (money * 0.08m);
+
+            }
+        }
+        else if (places == "abroad")
+        {
+            if (season == "summer")
+            {
+                money = (point * dancer);
+                money = money + (money * 0.50m);
+                money = money - (money * 0.10m);
+
+            }
+            else if (season == "winter")
+            {
+                money = (point * dancer);
+                money = money + (money * 0.50m);
+                money = money - (money * 0.15m);
+
+            }
+        }
+
+        decimal afterComeBackMoneyOff =money * 0.75m;
+        decimal allMoneyc = (money - afterComeBackMoneyOff) / dancer;
+      
+
+        Console.WriteLine("Charity - {0:f2}", afterComeBackMoneyOff);
+        Console.WriteLine("Money per dancer - {0:f2}", allMoneyc);
+
+    }
+}
+
