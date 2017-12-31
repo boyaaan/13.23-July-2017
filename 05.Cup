@@ -1,0 +1,58 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+
+        int wide = 5 * n;
+        int sharp = wide - (n * 2);
+        int points = n;
+        int inPoints = n;
+
+        for (int i = 0; i <= n + 2; i++)
+        {
+            if (i < n /2)
+            {
+                Console.WriteLine("{0}{1}{0}", new string('.',points),new string('#',sharp));
+
+                points++;
+                sharp -= 2;
+            }
+            else if (i >= (n / 2)+ 1 && i <= n + 1)
+            {
+                Console.WriteLine("{0}#{1}#{0}", new string('.', points), new string('.', sharp - 2));
+                points++;
+                sharp -= 2;
+
+            }
+
+            if (i == n + 2)
+            {
+                Console.WriteLine("{0}#{1}#{0}", new string('.', points - 1), new string('#', sharp ));
+
+            }
+        }
+
+        for (int i = 0; i <= n +1 ; i++)
+        {
+            if (i == (n/2))
+            {
+                
+                Console.WriteLine("{0}D^A^N^C^E^{0}", new string('.', (wide - 10)/2));
+
+            }
+            else
+            {
+                Console.WriteLine("{0}#{1}#{0}", new string('.', points - 3), new string('#', sharp + 4));
+
+            }
+
+
+        }
+
+
+    }
+}
+
