@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double steps = double.Parse(Console.ReadLine());
+        double countDancers = double.Parse(Console.ReadLine());
+        double counDaysForStudy = double.Parse(Console.ReadLine());
+
+        double stepsOnDay = steps / counDaysForStudy;
+        double stepsOnDay1 =Math.Ceiling((stepsOnDay / steps) * 100);
+        double procent = stepsOnDay1 / countDancers;
+
+        if (stepsOnDay1 <= 13)
+        {
+            Console.WriteLine("Yes, they will succeed in that goal! {0:f2}%.", procent);
+
+        }
+        else
+        {
+            Console.WriteLine("No, They will not succeed in that goal! Required {0:f2}% steps to be learned per day.",procent);
+        } 
+    }
+}
+
