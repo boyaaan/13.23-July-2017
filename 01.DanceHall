@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double l = double.Parse(Console.ReadLine());
+        double w = double.Parse(Console.ReadLine());
+        double a = double.Parse(Console.ReadLine());
+
+        double hall = (l * 100) * (w * 100);
+        double garderob = ((a * 100) * (a * 100));
+        double goleminaPeika = hall / 10;
+        double freeSpaces = hall - garderob - goleminaPeika;
+        double countDancers = freeSpaces / (40 + 7000);
+
+        Console.WriteLine("{0}",Math.Floor (countDancers));
+            
+
+
+    }
+}
+
